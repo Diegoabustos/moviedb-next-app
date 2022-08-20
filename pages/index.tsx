@@ -1,11 +1,13 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
+// Components
+import Header from "./components/Header/Header";
 
 const Home: NextPage = () => {
   return (
-    <div>
-      Movie app with Nextjs
-    </div>
-  )
-}
+    <main className="relative h-screen overflow-y-scroll">
+      <Header />
+    </main>
+  );
+};
 
-export default Home
+export default Home;
