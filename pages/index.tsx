@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   return (
     <Layout page="Home">
       <main className="relative h-screen overflow-y-scroll">
-        <Header />
+        <Header setQuery={setQuery} />
         <Hero />
         <Grid />
         <Card />
