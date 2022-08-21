@@ -13,6 +13,9 @@ module.exports = {
     fontFamily: {
       lora: ['Lora', 'sans-serif']
     },
+    minHeight: {
+      128: '40rem'
+    }
   },
-  plugins: [],
-}
+  plugins: []
+};
