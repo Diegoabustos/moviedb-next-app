@@ -3,17 +3,17 @@ import React from 'react'
 import Header from '../Header/Header';
 
 type LayoutProps = {
-    children: any;
+    children: React.ReactNode;
     page: string;
 }
 
-const Layout = ({ children, page }: LayoutProps) => {
+const Layout: React.FC<LayoutProps> = ({ children, page }) => {
   return (
     <div>
         <Head>
             <title>MovieDB NextJS - {page}</title>
         </Head>
-        <Header />
+        {/* <Header /> */}
         {children}
     </div>
   )
