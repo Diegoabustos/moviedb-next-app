@@ -10,18 +10,18 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+_Herramientas necesarias para instalar el software y como instalarlas_
 
 ```
 version node 14.0.0 en adelante y npm version 6 en adelante
-Recomendado tener última versión de yarn instalada ya que fue el manejador de dependencias locales usado para esté proyecto
 ```
+_Recomendado tener última versión de yarn instalada ya que fue el manejador de dependencias locales usado para esté proyecto._
 
 ### Instalación 🔧
+_Hacer clone de esté repositiorio._
 
-```
 
-_Instalación de dependencias mediante los siguientes comandos ubicado en la carpeta raíz del proyecto_
+_Instalación de dependencias mediante los siguientes comandos ubicado en la carpeta raíz del proyecto._
 
 ```
 yarn o npm install
@@ -34,7 +34,8 @@ _El proyecto utiliza la API REST de the movie database https://www.themoviedb.or
 ```
 .env.local
 ```
-Tomar de referencia el archivo:
+_Tomar de referencia el archivo:_
+
 ```
 .env.example
 ```
@@ -43,12 +44,12 @@ _Y asignarle la api key a la variable ubicada en esté archivo_
 
 ### Compilación
 
-_Mediante los comandos:_
+_Ejecutando cualquiera de los siguientes comandos comandos:_
+
 ```
 yarn dev o npm run start
 ```
 _El proyecto correra en el puerto 3000 (definido por defecto) por lo que hay que dirigirse ala url del navegador el http://localhost:3000/_
-
 
 
 ## Construido con 🛠️
@@ -58,9 +59,7 @@ _NextJs - Tailwindcss - react-query - typescript_
 * [yarn](https://yarnpkg.com/) - Manejador de dependencias locales. 
 
 
-
 ## Autores ✒️
-
 
 
 * **Diego Bustos** - *Trabajo Inicial* - [Diegoabustos](https://github.com/Diegoabustos/)
