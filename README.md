@@ -1,35 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MovieDB App - Proyecto hecho en NextJS
 
-## Getting Started
+__
 
-First, run the development server:
+## Comenzando 🚀
 
-```bash
-npm run dev
-# or
-yarn dev
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+
+
+
+### Pre-requisitos 📋
+
+_Que cosas necesitas para instalar el software y como instalarlas_
+
+```
+version node 14.0.0 en adelante y npm version 6 en adelante
+Recomendado tener última versión de yarn instalada ya que fue el manejador de dependencias locales usado para esté proyecto
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Instalación 🔧
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+_Instalación de dependencias mediante los siguientes comandos ubicado en la carpeta raíz del proyecto_
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+yarn o npm install
+```
 
-## Learn More
+## Configuración
 
-To learn more about Next.js, take a look at the following resources:
+_El proyecto utiliza la API REST de the movie database https://www.themoviedb.org/  por lo que hay que utilizar una api key privada. Dicha api key es proporcionada al crearse una cuenta en the movie db. Una vez teniendo la api key debe crearse el archivo:_
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+.env.local
+```
+Tomar de referencia el archivo:
+```
+.env.example
+```
+_Y asignarle la api key a la variable ubicada en esté archivo_
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### Compilación
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+_Mediante los comandos:_
+```
+yarn dev o npm run start
+```
+_El proyecto correra en el puerto 3000 (definido por defecto) por lo que hay que dirigirse ala url del navegador el http://localhost:3000/_
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# moviedb-next-app
+
+
+## Construido con 🛠️
+
+_NextJs - Tailwindcss - react-query - typescript_
+
+* [yarn](https://yarnpkg.com/) - Manejador de dependencias locales. 
+
+
+
+## Autores ✒️
+
+
+
+* **Diego Bustos** - *Trabajo Inicial* - [Diegoabustos](https://github.com/Diegoabustos/)
