@@ -17,10 +17,18 @@ const Home: NextPage = () => {
   const [query, setQuery] = useState("");
   const { data, fetchNextPage, isLoading, isFetching, error } =
     useFetchMovies(query);
+  
+    const handleScroll = (e: React.UIEvent<HTMLElement>) => {
+      const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
+  
+      if (scrollHeight - scrollTop === clientHeight) fetchNextPage();
+    };
+  
+    if (error) return <div>Oh Noo ! something went wrong !</div>
 
   return (
     <Layout page="Home">
-      <main className="relative h-screen overflow-y-scroll">
+      <main className="relative h-screen overflow-y-scroll" onScroll={handleScroll}>
         <Header setQuery={setQuery} />
         {!query && data && data.pages ? (
           <Hero
@@ -62,7 +70,7 @@ const Home: NextPage = () => {
               )
             : null}
         </Grid>
-        <Spinner />
+        {isLoading || isFetching ? <Spinner /> : null}
       </main>
     </Layout>
   );

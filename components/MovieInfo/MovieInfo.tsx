@@ -1,8 +1,11 @@
 import Image from "next/image";
 // Components
 import Thumb from "../Thumb/Thumb";
+import Pill from "../Pill/Pill";
 // Types
 import { Crew } from "../../api/types";
+// Helpers
+import { calcTime, convertMoney } from "../../helpers";
 
 
 type MovieInfoProps = {
@@ -22,6 +25,9 @@ const MovieInfo = ({
   thumbUrl,
   backgroundImgUrl,
   title,
+  time,
+  budget,
+  revenue,
   year,
   summary,
   rating,
@@ -49,6 +55,12 @@ const MovieInfo = ({
                 <p key={director.credit_id}>{director.name}</p>
               ))}
             </div>
+          </div>
+          <div className="mt-8 ">
+            <h3 className="text-lg font-bold">Movie data</h3>
+            <Pill clasName="ml-0" text={`Running time: ${calcTime(time)}`} />
+            <Pill clasName="ml-0" text={`Budget: ${convertMoney(budget)}`} />
+            <Pill clasName="ml-0" text={`Revenue: ${convertMoney(revenue)}`} />
           </div>
         </div>
       </div>
