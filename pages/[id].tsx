@@ -10,6 +10,7 @@ import Card from '../components/Card/Card';
 // Types
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { Movie, Credits, Crew, Cast } from '../api/types';
+import Layout from '../components/Layout/Layout';
 
 type MovieProps = {
     movie: Movie;
@@ -20,32 +21,34 @@ type MovieProps = {
 const Movie = ({cast, movie, directors}: MovieProps) => {
   const { backdrop_path, budget, original_title, overview, poster_path, release_date, revenue, runtime, vote_average } = movie;
   return (
-    <main>
-        <Header />
-        <Breadcrumb title={original_title} />
-        <MovieInfo 
-          thumbUrl={poster_path ? IMAGE_BASE_URL + POSTER_SIZE + poster_path : '/no_image.jpg'} 
-          rating={vote_average}
-          year={release_date.split('-')[0]}
-          backgroundImgUrl={backdrop_path ? IMAGE_BASE_URL + BACKDROP_SIZE + backdrop_path : '/no_image.jpg'}
-          title={original_title}
-          summary={overview}
-          directors={directors}
-          time={runtime}
-          budget={budget}
-          revenue={revenue}
-        />
-        <Grid className='p-4 max-w-7xl m-auto' title='Actors'>
-          {cast.map(actor => (
-            <Card 
-              key={actor.credit_id}
-              imgUrl={actor.profile_path ?  IMAGE_BASE_URL + POSTER_SIZE + actor.profile_path : "/no_image.jpg"}
-              title={actor.name}
-              subtitle={actor.character}
-            />
-          ))}
-        </Grid>
-    </main>
+    <Layout page='Movie detail'>
+      <main>
+          <Header />
+          <Breadcrumb title={original_title} />
+          <MovieInfo 
+            thumbUrl={poster_path ? IMAGE_BASE_URL + POSTER_SIZE + poster_path : '/no_image.jpg'} 
+            rating={vote_average}
+            year={release_date.split('-')[0]}
+            backgroundImgUrl={backdrop_path ? IMAGE_BASE_URL + BACKDROP_SIZE + backdrop_path : '/no_image.jpg'}
+            title={original_title}
+            summary={overview}
+            directors={directors}
+            time={runtime}
+            budget={budget}
+            revenue={revenue}
+          />
+          <Grid className='p-4 max-w-7xl m-auto' title='Actors'>
+            {cast.map(actor => (
+              <Card 
+                key={actor.credit_id}
+                imgUrl={actor.profile_path ?  IMAGE_BASE_URL + POSTER_SIZE + actor.profile_path : "/no_image.jpg"}
+                title={actor.name}
+                subtitle={actor.character}
+              />
+            ))}
+          </Grid>
+      </main>
+    </Layout>
   )
 }
 
